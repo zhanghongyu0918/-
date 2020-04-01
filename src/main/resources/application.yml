@@ -1,0 +1,24 @@
+spring:
+  application:
+      name: standard-framework
+  profiles:
+    active: dev
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  servlet:
+    multipart:
+      maxFileSize: 30MB
+      maxRequestSize: 30MB
+server:
+  port: 8018
+
+mybatis:
+  typeAliasesPackage: com.standard.framework.dao.model
+  configLocation: classpath:conf/mybatis/mybatis-config.xml
+  mapperLocations: classpath:conf/mybatis/mapper/*Mapper.xml
+
+logging:
+  config: classpath:conf/log4j2/log4j2.xml
+
+

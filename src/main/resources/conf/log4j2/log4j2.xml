@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="60" strict="true">
+    <Properties>
+        <Property name="PROJECT_NAME">standard-framework</Property>
+        <Property name="LOG_HOME">/app/${PROJECT_NAME}/logs</Property>
+        <Property name="COMMON_LEVEL">info</Property>
+        <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} %t [%p] %l %msg%n</Property>
+    </Properties>
+
+    <Appenders>
+        <!-- 控制台 -->
+        <Console name="console" target="SYSTEM_OUT" follow="true">
+            <PatternLayout charset="utf-8" pattern="${LOG_PATTERN}" />
+        </Console>
+
+        <!-- INFO -->
+        <RollingFile name="info" fileName="${LOG_HOME}/info.log" filePattern="${LOG_HOME}/info/%d{yyyy-MM-dd}-%i.log.gz">
+            <filters>
+                <ThresholdFilter level="info" />
+                <ThresholdFilter level="warn" onMatch="DENY" onMismatch="NEUTRAL" />
+            </filters>
+            <PatternLayout charset="UTF-8">
+                <pattern>${LOG_PATTERN}</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy modulate="true" interval="1" />
+                <SizeBasedTriggeringPolicy size="200 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="200" />
+        </RollingFile>
+
+        <!-- WARN -->
+        <RollingFile name="warn" fileName="${LOG_HOME}/warn.log" filePattern="${LOG_HOME}/warn/%d{yyyy-MM-dd}-%i.log.gz">
+            <filters>
+                <ThresholdFilter level="warn" />
+                <ThresholdFilter level="error" onMatch="DENY" onMismatch="NEUTRAL" />
+            </filters>
+            <PatternLayout charset="UTF-8">
+                <pattern>${LOG_PATTERN}</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy modulate="true" interval="1" />
+                <SizeBasedTriggeringPolicy size="200 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="100" />
+        </RollingFile>
+
+        <!-- ERROR -->
+        <RollingFile name="error" fileName="${LOG_HOME}/error.log" filePattern="${LOG_HOME}/error/%d{yyyy-MM-dd}-%i.log.gz">
+            <filters>
+                <ThresholdFilter level="error" />
+            </filters>
+            <PatternLayout charset="UTF-8">
+                <pattern>${LOG_PATTERN}</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy modulate="true" interval="1" />
+                <SizeBasedTriggeringPolicy size="200 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="100" />
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <!--过滤掉spring和mybatis的一些无用的DEBUG信息-->
+        <!--<logger name="org.mybatis" level="info" additivity="false">-->
+            <!--<AppenderRef ref="Console"/>-->
+        <!--</logger>-->
+        <!--若是additivity设为false，则 子Logger 只会在自己的appender里输出，而不会在 父Logger 的appender里输出。-->
+        <!--<Logger name="org.springframework" level="info" additivity="false">-->
+            <!--<AppenderRef ref="Console"/>-->
+        <!--</Logger>-->
+        <root level="info">
+            <appender-ref ref="console"/>
+            <appender-ref ref="info"/>
+            <appender-ref ref="warn"/>
+            <appender-ref ref="error"/>
+        </root>
+    </Loggers>
+</Configuration>
