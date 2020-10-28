@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.standard.framework.dao.mapper.TUserMapper">
-  <resultMap id="BaseResultMap" type="com.standard.framework.dao.model.TUser">
+<mapper namespace="com.zhy.demo.dao.mapper.TUserMapper">
+  <resultMap id="BaseResultMap" type="com.zhy.demo.dao.model.TUser">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="user_name" jdbcType="VARCHAR" property="userName" />
     <result column="password" jdbcType="VARCHAR" property="password" />
@@ -21,7 +21,7 @@
     delete from t_user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insertSelective" parameterType="com.standard.framework.dao.model.TUser">
+  <insert id="insertSelective" parameterType="com.zhy.demo.dao.model.TUser">
     insert into t_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -58,7 +58,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.standard.framework.dao.model.TUser">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhy.demo.dao.model.TUser">
     update t_user
     <set>
       <if test="userName != null">

@@ -1,6 +1,6 @@
 spring:
   application:
-      name: standard-framework
+      name: zhy-demo
   profiles:
     active: dev
   jackson:
@@ -14,7 +14,7 @@ server:
   port: 8018
 
 mybatis:
-  typeAliasesPackage: com.standard.framework.dao.model
+  typeAliasesPackage: com.zhy.demo.dao.model
   configLocation: classpath:conf/mybatis/mybatis-config.xml
   mapperLocations: classpath:conf/mybatis/mapper/*Mapper.xml
 

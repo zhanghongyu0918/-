@@ -1,6 +1,6 @@
-package com.standard.framework.config;
+package com.zhy.demo.config;
 
-import com.standard.framework.filter.MyTestFilter;
+import com.zhy.demo.filter.MyTestFilter;
 import org.apache.catalina.filters.RemoteIpFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;

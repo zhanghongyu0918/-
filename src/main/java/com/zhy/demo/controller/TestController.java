@@ -1,6 +1,6 @@
-package com.standard.framework.controller;
+package com.zhy.demo.controller;
 
-import com.standard.framework.service.TestService;
+import com.zhy.demo.service.TestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

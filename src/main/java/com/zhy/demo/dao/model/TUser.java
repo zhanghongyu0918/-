@@ -1,4 +1,4 @@
-package com.standard.framework.dao.model;
+package com.zhy.demo.dao.model;
 
 import java.io.Serializable;
 import java.util.Date;

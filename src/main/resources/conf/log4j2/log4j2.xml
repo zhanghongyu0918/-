@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration monitorInterval="60" strict="true">
     <Properties>
-        <Property name="PROJECT_NAME">standard-framework</Property>
+        <Property name="PROJECT_NAME">zhy-demo</Property>
         <Property name="LOG_HOME">/app/${PROJECT_NAME}/logs</Property>
         <Property name="COMMON_LEVEL">info</Property>
         <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} %t [%p] %l %msg%n</Property>

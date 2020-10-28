@@ -1,9 +1,9 @@
-package com.standard.framework.service.impl;
+package com.zhy.demo.service.impl;
 
 import com.alibaba.fastjson.JSON;
-import com.standard.framework.dao.mapper.TUserMapper;
-import com.standard.framework.dao.model.TUser;
-import com.standard.framework.service.TestService;
+import com.zhy.demo.dao.mapper.TUserMapper;
+import com.zhy.demo.dao.model.TUser;
+import com.zhy.demo.service.TestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

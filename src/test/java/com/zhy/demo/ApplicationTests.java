@@ -1,4 +1,4 @@
-package com.standard.framework;
+package com.zhy.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

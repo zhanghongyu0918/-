@@ -46,7 +46,7 @@
         </javaTypeResolver>
 
         <!-- 生成实体类地址 -->
-        <javaModelGenerator targetPackage="com.standard.framework.dao.model" targetProject="${project}">
+        <javaModelGenerator targetPackage="com.zhy.demo.dao.model" targetProject="${project}">
             <property name="enableSubPackages" value="false"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -55,7 +55,7 @@
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
         <!-- 生成mapxml对应client，也就是接口dao -->
-        <javaClientGenerator targetPackage="com.standard.framework.dao.mapper" targetProject="${project}" type="XMLMAPPER">
+        <javaClientGenerator targetPackage="com.zhy.demo.dao.mapper" targetProject="${project}" type="XMLMAPPER">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
         <!-- table可以有多个,每个数据库中的表都可以写一个table，tableName表示要匹配的数据库表,也可以在tableName属性中通过使用%通配符来匹配所有数据库表,只有匹配的表才会自动生成文件 -->
@@ -68,13 +68,9 @@
                enableDeleteByExample="false"
                enableSelectByExample="false"
                selectByExampleQueryId="false">
-
-
             <property name="useActualColumnNames" value="false"/>
             <!--   数据库表主键
               <generatedKey column="id" sqlStatement="Mysql" identity="true" /> -->
         </table>
-
-
     </context>
 </generatorConfiguration>
