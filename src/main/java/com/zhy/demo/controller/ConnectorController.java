@@ -173,7 +173,7 @@ public class ConnectorController {
 			//    System.out.println(name);
 			//}
 			if (config.getString("connector.class").contains("io.debezium.connector.mysql.MySqlConnector")) {
-				if (config.getString("snapshot.select.statement.overrides") != null) {
+				if (config.getString("table.whitelist").contains("cc_task_clue_relation")) {
 					System.out.println(name);
 				}
 			}

@@ -30,7 +30,7 @@ public class ConfigCenterDomainManager {
 
 	public static void getDomain() throws Exception {
 		//定义正则表达式
-		String regex = "[-a-zA-Z0-9]{0,62}\\.shanyishanmei\\.com";
+		String regex = "[-a-zA-Z0-9]{0,62}.[-a-zA-Z0-9]{0,62}.shanyishanmei.com";
 		Pattern pattern = Pattern.compile(regex);
 
 		int sheetIndex = 0;
@@ -68,7 +68,6 @@ public class ConfigCenterDomainManager {
 		row1.createCell(1).setCellValue("应用ID");
 		row1.createCell(2).setCellValue("文件名");
 		row1.createCell(3).setCellValue("shanyishanmei域名");
-		row1.createCell(4).setCellValue("文件内容");
 		//遍历创建数据行
 		for (int i = 1; i <= records.size(); i++) {
 			JSONObject recordRow = records.get(i - 1);
@@ -77,7 +76,6 @@ public class ConfigCenterDomainManager {
 			row.createCell(1).setCellValue(recordRow.getString("appId"));
 			row.createCell(2).setCellValue(recordRow.getString("fileName"));
 			row.createCell(3).setCellValue(recordRow.getString("domain"));
-			row.createCell(4).setCellValue(recordRow.getString("content"));
 		}
 		//文档输出
 		FileOutputStream out = new FileOutputStream(FILE_PATH + "_" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()) + ".xls");
